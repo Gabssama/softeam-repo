@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FormController;
+use App\Http\Controllers\SellsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +16,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('bienvenue');
+    return view('landingpage');
 });
+
+Route::get('/forms', [FormController::class, 'index'])->name('getforms');
+Route::get('/clients-more-than-30-materiel', [SellsController::class, 'clientsThirtyMateriel'])->name('getfirstquery');
+
