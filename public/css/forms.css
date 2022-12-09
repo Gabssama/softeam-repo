@@ -1,12 +1,15 @@
 html, body {
   min-height: 100%;
+  
   }
 
   .flex-body{
     display:flex;
     justify-content: center;
+    margin-top:10px;
+    
   }
-  body, div, form, input, select { 
+  body, div, form, input, .select-client { 
   padding: 0;
   margin: 0;
   outline: none;
@@ -15,15 +18,28 @@ html, body {
   color: #666;
   line-height: 22px;
   }
+ 
+  .message-success{
+    background-color: green;
+    color: #fff;
+    width:50%;
+    text-align: center;
+    margin:5px auto;
+    font-size:larger;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    padding:5px;
+  }
   h1, h4 {
-  margin: 15px 0 4px;
-  font-weight: 400;
+  margin: 15px 0 4px !important;
+  font-weight: 400 !important;
   }
   h4 {
-  margin: 20px 0 4px;
-  font-weight: 400;
+  margin: 20px 0 4px !important;
+  font-weight: 400 !important;
   }
-  span {
+  small > span, h4 > span {
   color: red;
   }
   .small {
@@ -36,8 +52,17 @@ html, body {
   align-items: center;
   height: inherit;
   padding: 3px;
-  width:33%;
+  width:40%;
   }
+
+  .testbox2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+    padding: 3px;
+    width:80%;
+    }
   form {
   width: 100%;
   padding: 20px;
@@ -51,35 +76,32 @@ html, body {
   border-radius: 3px;
   vertical-align: middle;
   }
-  input:hover, textarea:hover, select:hover {
+  input:hover, textarea:hover, .select-client:hover {
   outline: none;
   border: 1px solid #095484;
   background: #e6eef7;
   }
-  .title-block select, .title-block input {
+  .title-block .select-client, .title-block input {
   margin-bottom: 10px;
+  
   }
-  select {
+  
+  .select-client {
   padding: 7px 0;
   border-radius: 3px;
   border: 1px solid #ccc;
   background: transparent;
   }
-  select, table {
+  .select-client, table {
   width: 100%;
   }
-  option {
+  .option-client {
   background: #fff;
   }
   .day-visited, .time-visited {
   position: relative;
   }
-  input[type="date"]::-webkit-inner-spin-button {
-  display: none;
-  }
-  input[type="time"]::-webkit-inner-spin-button {
-  margin: 2px 22px 0 0;
-  }
+ 
   .day-visited i, .time-visited i, input[type="date"]::-webkit-calendar-picker-indicator {
   position: absolute;
   top: 8px;
@@ -90,14 +112,15 @@ html, body {
   z-index: 1;
   color: #a9a9a9;
   }
-  [type="date"]::-webkit-calendar-picker-indicator {
-  right: 0;
-  z-index: 2;
-  opacity: 0;
-  }
+ 
   .question-answer label {
   display: block;
   padding: 0 20px 10px 0;
+  }
+
+  .block{
+    display:block;
+    width:100%;
   }
   .question-answer input {
   width: auto;
@@ -117,14 +140,22 @@ html, body {
   width: 25%;
   text-align: left;
   }
-  textarea {
-  width: calc(100% - 6px);
-  }
+
   .btn-block {
   margin-top: 20px;
   text-align: center;
   }
-  button {
+
+  .select-materiel{
+    width:100%;
+  }
+.input-text-validate-msg{
+  display:none;
+}
+  .is-invalid, .is-invalid:focus{
+    border-color:red;
+  }
+  .button {
   width: 150px;
   padding: 10px;
   border: none;
@@ -136,7 +167,7 @@ html, body {
   color: #fff;
   cursor: pointer;
   }
-  button:hover {
+  .button:hover {
   background-color: #0666a3;
   }
   @media (min-width: 568px) {
@@ -144,12 +175,12 @@ html, body {
   display: flex;
   justify-content: space-between;
   }
-  .title-block select {
+  .title-block .select-client {
   width: 30%;
   margin-bottom: 0;
   }
   .title-block input {
-  width: 45%;
+  width: 95%;
   margin-bottom: 0;
   }
   th, td {

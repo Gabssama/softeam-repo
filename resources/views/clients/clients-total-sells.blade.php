@@ -15,17 +15,15 @@
         <th>Prénom</th>
         <th>Nom</th>
         <th>Email</th>
-        <th>Qté Matériels</th>
         <th>Total</th>
       </thead>
       <tbody>
         @foreach($clients as $key => $client)
         <tr>
           <td>{{$key +1}}</td>
-          <td>{{$client['firstname']}}</td>
-          <td>{{$client['lastname']}}</td>
+          <td>{{$client['firstName']}}</td>
+          <td>{{$client['lastName']}}</td>
           <td>{{$client['email']}}</td>
-          <td>{{$client['NbOfMateriel']}}</td>
           <td>{{$client['TotalMateriel']}}€</td>
         </tr>
         @endforeach
