@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y \
    libjpeg62-turbo-dev \
    libfreetype6-dev \
    libmysqlclient-dev \
+   libzip-dev \
    locales \
    zip \
    jpegoptim optipng pngquant gifsicle \
@@ -17,7 +18,7 @@ RUN apt-get update && apt-get install -y \
    git \
    curl
  
-RUN pecl pdo pdo_mysql mbstring zip exif pcntl
+RUN docker-php-ext-install pdo pdo_mysql zip exif pcntl
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg
 RUN docker-php-ext-install gd
  
