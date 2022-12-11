@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
    libpng-dev \
    libjpeg62-turbo-dev \
    libfreetype6-dev \
-   libmariabd-dev \
+   libmariadb-dev \
    libzip-dev \
    locales \
    zip \
@@ -33,18 +33,9 @@ COPY .env.example /var/www/html/.env
 
 # Install Laravel dependencies
 RUN composer install
-
-# Change ownership of the project directory to the www-data user and group
-RUN chown -R www-data:www-data /var/www/html
-
-
-# Create a MySQL database and run migrations
-RUN mysql -u root -e "CREATE DATABASE softeam"
-RUN php artisan migrate --db:seed
   
 # Expose port 8000 and start PHP-FPM
 EXPOSE 8000
 CMD wait-for-it $DB_HOST:3306 -- bash -c "sleep 30 && php artisan migrate && php artisan key:generate && php artisan serve --host 0.0.0.0"
-CMD php artisan serve
  
 

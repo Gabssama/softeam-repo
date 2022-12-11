@@ -7,8 +7,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
-    #volumes:
-    #   - .:/var/www/html
     environment :
     - DB_HOST=db
     - DB_DATABASE=db
@@ -18,11 +16,8 @@ services:
     - db
   db:
    image: mysql:
-    environment:
-      - MYSQL_RANDOM_ROOT_PASSWORD=yes
-      - MYSQL_DATABASE=db
-      - MYSQL_USER=user
-      - MYSQL_PASSWORD=admin
-
-    ports:
-      - "3306:3306"
+  environment:
+    - MYSQL_RANDOM_ROOT_PASSWORD=yes
+    - MYSQL_DATABASE=db
+    - MYSQL_USER=user
+    - MYSQL_PASSWORD=admin
