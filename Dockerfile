@@ -36,6 +36,6 @@ RUN composer install
   
 # Expose port 8000 and start PHP-FPM
 EXPOSE 8000
-CMD wait-for-it $DB_HOST:3306 -- bash -c "sleep 30 && php artisan migrate && php artisan key:generate && php artisan serve --host 0.0.0.0"
+CMD wait-for-it $DB_HOST:3306 -- bash -c "sleep 30 && php artisan migrate --seed && php artisan key:generate && php artisan serve --host 0.0.0.0"
  
 

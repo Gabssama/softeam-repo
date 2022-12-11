@@ -8,16 +8,17 @@ services:
     ports:
       - "8000:8000"
     environment :
-    - DB_HOST=db
-    - DB_DATABASE=db
-    - DB_USERNAME=user
-    - DB_PASSWORD=admin
+      - DB_HOST=db
+      - DB_DATABASE=db
+      - DB_USERNAME=user
+      - DB_PASSWORD=admin
     depends_on:
-    - db
+      - db
   db:
     image: mysql
+    container_name: test_softeam
     environment:
-    - MYSQL_RANDOM_ROOT_PASSWORD=yes
-    - MYSQL_DATABASE=db
-    - MYSQL_USER=user
-    - MYSQL_PASSWORD=admin
+      - MYSQL_RANDOM_ROOT_PASSWORD=yes
+      - MYSQL_DATABASE=db
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=admin
