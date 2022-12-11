@@ -16,7 +16,7 @@ services:
     - db
   db:
    image: mysql:
-  environment:
+   environment:
     - MYSQL_RANDOM_ROOT_PASSWORD=yes
     - MYSQL_DATABASE=db
     - MYSQL_USER=user
