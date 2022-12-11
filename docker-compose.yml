@@ -15,8 +15,8 @@ services:
     depends_on:
     - db
   db:
-   image: mysql:
-   environment:
+    image: mysql
+    environment:
     - MYSQL_RANDOM_ROOT_PASSWORD=yes
     - MYSQL_DATABASE=db
     - MYSQL_USER=user
